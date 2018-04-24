@@ -1,0 +1,31 @@
+#!/bin/bash
+
+str1=""
+str2="Sad"
+str3="Happy"
+
+# Check if string is empty
+
+if [ "$str1" ]; then
+		echo "$str1 is not null"
+fi
+
+# Check if string has a value
+
+if [ -z "$str1" ]; then
+		echo "That string has no value"
+fi
+
+# Compare strings
+
+if [ "$str2" == "$str3" ]; then
+		echo "$str2 equals $str3"
+elif [ "$str2" != "$str3" ]; then
+		echo "$str2 is not equal to $str3"
+fi
+
+if [ "$str2" > "$str3" ]; then
+        echo "$str2 is greater than $str3"
+elif [ "$str2" < "$str3" ]; then
+        echo "$str2 is less than $str3"
+fi

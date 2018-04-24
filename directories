@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Create a file and open it in vim if its created successfully
+
+touch sample_file && vim sample_file
+
+# Check if a directory exists and create it otherwise
+
+[ -d sample_dir ] || mkdir sample_dir

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+read -p "Enter 2 numbers to add (seperate by space): " num1 num2
+
+sum=$((num1+num2))
+echo "$num1 + $num2 = $sum"
+
+read -sp "Enter the password : " secret
+
+if [ "$secret" == "password" ]; then
+    echo ""
+    echo "Password correct"
+else
+    echo ""
+    echo "Password incorrect"
+fi
+
+# Change input seperator
+
+OIFS="$IFS"
+
+IFS=","
+
+read -p "Enter 2 numbers to add (seperate by comma): " num1 num2
+
+# Use parameter expansion to substitute white spaces
+
+num1=${num1//[[:blank:]]/}
+num2=${num2//[[:blank:]]/}
+
+sum=$((num1+num2))
+echo "$num1 + $num2 = $sum"
+
+IFS="$OIFS"
+
+# Parameter expansion
+
+name="Dante"
+echo "${name}'s sword"
+
+sample_string="The dog climbed the tree"
+echo "${sample_string//dog/cat}"
+
+echo "I am ${name2:=Trish}"
